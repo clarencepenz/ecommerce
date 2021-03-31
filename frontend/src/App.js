@@ -1,16 +1,21 @@
 import React from 'react';
-import { Provider } from 'react-redux'
-import {store } from './store'
-import './App.css';
 
 function App() {
   return (
-    <Provider store={store}>
-      <div>
+      <div style={styles.container}>
           <h1>Ecommerce</h1>
       </div>
-    </Provider>
   );
 }
 
 export default App;
+
+
+const styles = {
+    container: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh'
+    }
+}
