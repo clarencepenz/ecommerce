@@ -1,13 +1,17 @@
-import React from 'react'
+import React from 'react';
+import Ratings from '../Ratings';
 
-export default function Product() {
+export default function Product({image, name, price, ratings, reviews, rest}) {
   return (
-    <div style={styles.card}>
-       <img style={styles.img} src='https://lh3.googleusercontent.com/proxy/u8mUM3031LmZANQbr4G2oEq6afBFeScKL-nkDeIkZ2-rCW2LM6_cNZYxpLdAWjaA29dooeMOofL0KO8I0HOo7X6Vix2Cj1LEcDOJQ9DH3bxfo5NgBFdek5hiu_Y' alt='product'/>
-       <h3 style={styles.texts}>Ball</h3>
-       <p style={styles.texts}>$3000</p>
+    <div style={styles.card} {...rest}>
+      <img style={styles.img} src={image} alt="product" />
+      <h3 style={styles.texts}>{name}</h3>
+      <div style={styles.texts}>
+        <Ratings rating={ratings} numReviews={reviews} />
+      </div>
+      <p style={styles.texts}>{price}</p>
     </div>
-  )
+  );
 }
 
 const styles = {
@@ -15,20 +19,20 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    minHeight: '300px',
+    height: '400px',
     width: '250px',
     backgroundColor: '#f4f4f4',
     border: '1px solid #c4c4c4',
-    borderRadius: '5px'
+    borderRadius: '5px',
+    margin: '10px',
   },
   img: {
-    height: 'auto',
-    width: '200px',
-    marginTop: '10px'
+    height: '250px',
+    width: 'auto',
+    marginTop: '10px',
   },
   texts: {
     paddingLeft: '20px',
-    alignSelf: 'flex-start'
-
-  }
-}
+    alignSelf: 'flex-start',
+  },
+};
