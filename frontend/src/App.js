@@ -1,9 +1,10 @@
 import React from 'react';
+import Product from './components/Product';
 
 function App() {
   return (
       <div style={styles.container}>
-          <h1>Ecommerce</h1>
+         <Product/>
       </div>
   );
 }
