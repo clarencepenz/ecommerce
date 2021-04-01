@@ -1,11 +1,12 @@
 import React from 'react';
 import Product from './components/Product';
+import Navbar from './components/Navbar';
 
 const data = {
   products: [
     {
       _id: 1,
-      image: 'https://lh3.googleusercontent.com/proxy/u8mUM3031LmZANQbr4G2oEq6afBFeScKL-nkDeIkZ2-rCW2LM6_cNZYxpLdAWjaA29dooeMOofL0KO8I0HOo7X6Vix2Cj1LEcDOJQ9DH3bxfo5NgBFdek5hiu_Y',
+      image: 'https://i.pinimg.com/originals/bd/ef/cb/bdefcbc72735f64db17f3250b1e64245.png',
       name: 'Shirts',
       price: '$4000',
       ratings: 2.5,
@@ -35,9 +36,12 @@ const data = {
 
 function App() {
   return (
-    <div style={styles.container}>
-      {productItem}
-    </div>
+    <>
+      <Navbar/>
+      <div style={styles.container}>
+        {productItem}
+      </div>
+    </>
   );
 }
 

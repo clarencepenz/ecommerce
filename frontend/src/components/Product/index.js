@@ -3,14 +3,16 @@ import Ratings from '../Ratings';
 
 export default function Product({image, name, price, ratings, reviews, rest}) {
   return (
-    <div style={styles.card} {...rest}>
-      <img style={styles.img} src={image} alt="product" />
-      <h3 style={styles.texts}>{name}</h3>
-      <div style={styles.texts}>
-        <Ratings rating={ratings} numReviews={reviews} />
+    <a href='/' style={styles.link}>
+      <div style={styles.card} {...rest}>
+        <img style={styles.img} src={image} alt="product" />
+        <h3 style={styles.texts}>{name}</h3>
+        <div style={styles.texts}>
+          <Ratings rating={ratings} numReviews={reviews} />
+        </div>
+        <p style={styles.texts}>{price}</p>
       </div>
-      <p style={styles.texts}>{price}</p>
-    </div>
+    </a>
   );
 }
 
@@ -25,6 +27,7 @@ const styles = {
     border: '1px solid #c4c4c4',
     borderRadius: '5px',
     margin: '10px',
+    cursor: 'pointer'
   },
   img: {
     height: '250px',
@@ -35,4 +38,8 @@ const styles = {
     paddingLeft: '20px',
     alignSelf: 'flex-start',
   },
+  link: {
+    textDecoration: 'none',
+    color: '#000'
+  }
 };
