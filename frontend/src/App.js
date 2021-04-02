@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom'
 import Product from './components/Product';
 import Navbar from './components/Navbar';
 
@@ -37,7 +38,9 @@ const data = {
 function App() {
   return (
     <>
+    <BrowserRouter>
       <Navbar/>
+    </BrowserRouter>
       <div style={styles.container}>
         {productItem}
       </div>

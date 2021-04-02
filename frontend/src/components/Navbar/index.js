@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Navbar() {
   return (
@@ -6,9 +7,40 @@ export default function Navbar() {
       <div style={styles.brand}>
         <h1>CART SHOPS</h1>
       </div>
-      <div style={styles.links}>
-        <a>cart</a> { ' ' }
-        <a>sign in</a>
+      <div style={styles.link}>
+        <div >
+          <Link style={styles.links} to='#'>
+            cart
+          </Link>
+        </div>
+        <div className='dropdown'>
+          <Link style={styles.links} to='#'>
+            Def in{' '}
+            <i className="fa fa-caret-down"></i>
+          </Link>
+          <ul className='dropdown-content'>
+            <Link onClick={() => alert('😆😆😆😆😆')} style={styles.links} to='#'>
+              haha
+            </Link>
+            <Link style={styles.links} to='#'>
+              love
+            </Link>
+          </ul>
+        </div>
+        <div className='dropdown'>
+          <Link style={styles.links} to='#'>
+            Sign in{' '}
+            <i className="fa fa-caret-down"></i>
+          </Link>
+          <ul className='dropdown-content'>
+            <Link style={styles.links} to='#'>
+              haha
+            </Link>
+            <Link style={styles.links} to='#'>
+              love
+            </Link>
+          </ul>
+        </div>
       </div>
     </div>
   )
@@ -18,6 +50,7 @@ const styles = {
   container: {
     display: 'flex',
     backgroundColor: '#2e2e2e',
+    height: '8vh',
     flexWrap: 'wrap',
     paddingLeft: '40px',
     paddingRight: '40px',
@@ -25,10 +58,17 @@ const styles = {
   },
   brand: {
     marginRight: 'auto',
-    fontSize: '14px'
+    fontSize: '12px'
   },
   links: {
-    fontSize: '24px',
-    marginTop: '20px',
+    fontSize: '20px',
+    textDecoration: 'none',
+    color: '#fff',
+    display: 'flex',
+    padding: '0 10px'
+  },
+  link: {
+    marginTop: '10px',
+    display: 'flex',
   },
 };
